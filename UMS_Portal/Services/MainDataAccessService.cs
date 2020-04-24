@@ -38,6 +38,8 @@ namespace UMS_Portal.Services
                                   ActionName = m.NavigationMenu.ActionName,
                                   ControllerName = m.NavigationMenu.ControllerName,
                                   ParentMenuId = m.NavigationMenu.ParentMenuId,
+                                  IconClass = m.NavigationMenu.IconClass,
+                                  WithoutLinking = m.NavigationMenu.WithoutLinking
                               }).Distinct().ToListAsync();
 
             return data;

@@ -365,6 +365,10 @@
     <Compile Include="Migrations\202004241919016_RoleMenuEntityInit.Designer.cs">
       <DependentUpon>202004241919016_RoleMenuEntityInit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004242112544_RoleBasedMenuEdited.cs" />
+    <Compile Include="Migrations\202004242112544_RoleBasedMenuEdited.Designer.cs">
+      <DependentUpon>202004242112544_RoleBasedMenuEdited.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -668,6 +672,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202004241919016_RoleMenuEntityInit.resx">
       <DependentUpon>202004241919016_RoleMenuEntityInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004242112544_RoleBasedMenuEdited.resx">
+      <DependentUpon>202004242112544_RoleBasedMenuEdited.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

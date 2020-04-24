@@ -46,6 +46,10 @@ namespace UMS_Portal.Models
 
         public string ActionName { get; set; }
 
+        public string IconClass { get; set; }
+
+        public bool WithoutLinking { get; set; }
+
         [NotMapped]
         public bool Permitted { get; set; }
     }
