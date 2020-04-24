@@ -5,6 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
+using UMS_Portal.DAL;
 using UMS_Portal.Models;
 
 namespace UMS_Portal
