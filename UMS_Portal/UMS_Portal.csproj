@@ -588,6 +588,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\krzysztof.png" />
     <Content Include="Images\logo_menu.png" />
     <Content Include="Images\logo_mini.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -656,10 +657,11 @@
     <Content Include="Views\Shared\_StatusArea.cshtml" />
     <Content Include="Views\Shared\_FooterArea.cshtml" />
     <Content Include="Views\Shared\_SmallLoader.cshtml" />
+    <Content Include="Views\Admin\UserMenusConfiguration.cshtml" />
+    <Content Include="Views\Admin\ThemeConfiguration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Admin\" />
     <Folder Include="Views\Widgets\" />
   </ItemGroup>
   <ItemGroup>

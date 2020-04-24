@@ -95,6 +95,68 @@ namespace UMS_Portal.Migrations
 
             #endregion
 
+            #region Default menu items
+
+            if (!context.NavigationMenu.Any(r => r.Name == "Interfejs"))
+            {
+                NavigationMenu interfejs = new NavigationMenu
+                {
+                    Name = "Interfejs",
+                    WithoutLinking = true,
+                    IconClass = "notika-icon notika-edit"
+                };
+                context.NavigationMenu.Add(interfejs);
+                context.SaveChanges();
+
+                
+
+                NavigationMenu i_menu = new NavigationMenu
+                {
+                    Name = "Ustawienia menu",
+                    WithoutLinking = false,
+                    ActionName = "UserMenusConfiguration",
+                    ControllerName = "Admin",
+                    IconClass = "notika-icon notika-form",
+                    ParentMenuId = interfejs.Id
+                };
+
+                NavigationMenu i_ew = new NavigationMenu
+                {
+                    Name = "Ustawienia wizualne",
+                    WithoutLinking = false,
+                    ActionName = "ThemeConfiguration",
+                    ControllerName = "Admin",
+                    IconClass = "notika-icon notika-app",
+                    ParentMenuId = interfejs.Id
+                };
+                context.NavigationMenu.Add(i_ew);
+                context.NavigationMenu.Add(i_menu);
+                context.SaveChanges();
+
+                RoleMenuPermission rmp = new RoleMenuPermission
+                {
+                    RoleId = context.Roles.Where(r => r.Name == "Admin").Select(r => r.Id).FirstOrDefault(),
+                    NavigationMenuId = interfejs.Id
+                };
+                RoleMenuPermission rmp2 = new RoleMenuPermission
+                {
+                    RoleId = context.Roles.Where(r => r.Name == "Admin").Select(r => r.Id).FirstOrDefault(),
+                    NavigationMenuId = i_ew.Id
+                };
+                RoleMenuPermission rmp3 = new RoleMenuPermission
+                {
+                    RoleId = context.Roles.Where(r => r.Name == "Admin").Select(r => r.Id).FirstOrDefault(),
+                    NavigationMenuId = i_menu.Id
+                };
+                context.RoleMenuPermission.Add(rmp);
+                context.RoleMenuPermission.Add(rmp2);
+                context.RoleMenuPermission.Add(rmp3);
+                
+            }
+
+            #endregion
+
+
             context.SaveChanges();
         }
     }

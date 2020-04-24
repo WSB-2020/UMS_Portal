@@ -5,14 +5,14 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-                    <li class="active">
+                    <li>
                         <a href="@Url.Action("Index", "Home")"><i class="notika-icon notika-house"></i> Home</a>
                     </li>
                     @foreach (var item in Model.Where(m => m.ParentMenuId == null))
                     {
                         if (item.WithoutLinking)
                         {
-                            <li class="active">
+                            <li>
                                 <a data-toggle="tab" href="#@(item.Id)">
                                     <i class="@(item.IconClass)"></i>@(item.Name)
                                 </a>
@@ -20,7 +20,7 @@
                         }
                         else
                         {
-                            <li class="active">
+                            <li>
                                 <a href="@Url.Action(item.ActionName, item.ControllerName)">
                                     <i class="@(item.IconClass)"></i>@(item.Name)
                                 </a>
@@ -29,18 +29,18 @@
                     }
                 </ul>
                 <div class="tab-content custom-menu-content">
-                    @foreach (var item in Model.Where(m=>m.ParentMenuId != null))
+                    @foreach (var item in Model.Where(m => m.ParentMenuId == null))
                     {
-                            <div id="@(item.ParentMenuId)" class="tab-pane in active notika-tab-menu-bg animated flipInX">
-                                <ul class="notika-main-menu-dropdown">
-                                    @foreach (var child in Model.Where(m => m.ParentMenuId == item.Id))
-                                    {
-                                        <li>
-                                            <a href="@Url.Action(child.ActionName, child.ControllerName)">@(item.Name)</a>
-                                        </li>
-                                    }
-                                </ul>
-                            </div>
+                        <div id="@(item.Id)" class="tab-pane in notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                @foreach (var child in Model.Where(m => m.ParentMenuId == item.Id))
+                                {
+                                    <li>
+                                        <a href="@Url.Action(child.ActionName, child.ControllerName)">@(child.Name)</a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
                     }
                 </div>
             </div>

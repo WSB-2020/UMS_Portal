@@ -14,5 +14,16 @@ namespace UMS_Portal.Controllers
             return View();
         }
 
+        public ActionResult ThemeConfiguration()
+        {
+            return View();
+        }
+
+        public ActionResult UserMenusConfiguration()
+        {
+            return View();
+        }
+
+
     }
 }
