@@ -20,9 +20,7 @@
 
     @*@Html.Partial("~/Views/Shared/_MainMenuArea.cshtml")*@
     <div class="partialContent" data-url='@(Html.Raw(Url.Action("GetMainMenuAreaAsync", "Widgets")))'>
-        <div class="loading--partial">
-            Ładowanie...
-        </div>
+        @Html.Partial("~/Views/Shared/_SmallLoader.cshtml")
     </div>
 
     @Html.Partial("~/Views/Shared/_StatusArea.cshtml")

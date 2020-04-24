@@ -42,9 +42,7 @@ namespace UMS_Portal
                       "~/Content/PanelTheme/css/main.css",
                       "~/Content/PanelTheme/style.css",
                       "~/Content/PanelTheme/css/responsive.css",
-                      "~/Content/PanelTheme/",
-                      "~/Content/PanelTheme/",
-                      "~/Content/PanelTheme/"
+                      "~/Content/CustomPanelStyles.css"
                       ));
 
             bundles.Add(new ScriptBundle("~/Content/PanelTheme").Include(
