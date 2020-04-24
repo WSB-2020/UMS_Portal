@@ -75,8 +75,9 @@ namespace UMS_Portal
                       "~/Content/PanelTheme/js/plugins.js",
                       "~/Content/PanelTheme/js/chat/moment.min.js",
                       "~/Content/PanelTheme/js/chat/jquery.chat.js",
-                      "~/Content/PanelTheme/js/main.js",
-                      "~/Content/PanelTheme/js/tawk-chat.js"
+                      "~/Content/PanelTheme/js/main.js"
+                      //,
+                      //"~/Content/PanelTheme/js/tawk-chat.js"
                       ));
         }
     }

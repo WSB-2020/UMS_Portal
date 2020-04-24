@@ -6,7 +6,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                     <li>
-                        <a href="@Url.Action("Index", "Home")"><i class="notika-icon notika-house"></i> Home</a>
+                        <a href="@Url.Action("Index", "Home")"><i class="notika-icon notika-house"></i>Panel</a>
                     </li>
                     @foreach (var item in Model.Where(m => m.ParentMenuId == null))
                     {
