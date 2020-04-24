@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Principal;
 using System.Threading.Tasks;
 using System.Web;
 using UMS_Portal.DAL;
@@ -19,9 +21,9 @@ namespace UMS_Portal.Services
             _db = context;
         }
 
-        public async Task<List<NavigationMenuViewModel>>GetMenuItemsAsync(ClaimsPrincipal principal)
+        public async Task<List<NavigationMenuViewModel>>GetMenuItemsAsync(IIdentity principal)
         {
-            var isAuthenticated = principal.Identity.IsAuthenticated;
+            var isAuthenticated = principal.IsAuthenticated;
             if (!isAuthenticated)
                 return new List<NavigationMenuViewModel>();
 
@@ -41,9 +43,9 @@ namespace UMS_Portal.Services
             return data;
         }
 
-        private async Task<List<string>> GetUserRoleIds(ClaimsPrincipal ctx)
+        private async Task<List<string>> GetUserRoleIds(IIdentity ctx)
         {
-            var userId = GetUserId(ctx);
+            var userId = ctx.GetUserId();
             var data = await _db.Roles
                 .Where(r => r.Users.Any(u => u.UserId == userId))
                 .Select(r=>r.Id)

@@ -17,17 +17,49 @@
     <!--[if lt IE 8]> <p class="browserupgrade">Używasz <strong>przestażałej</strong> przeglądarki. Proszę <a href="http://browsehappy.com/">uaktualnij przeglądarkę</a>, aby móc w pełni korzystać ze strony.</p> <![endif]-->
     @Html.Partial("~/Views/Shared/_HeaderTopArea.cshtml")
     @Html.Partial("~/Views/Shared/_MobileMenuArea.cshtml")
-    @Html.Partial("~/Views/Shared/_MainMenuArea.cshtml")
+
+    @*@Html.Partial("~/Views/Shared/_MainMenuArea.cshtml")*@
+    <div class="partialContent" data-url='@(Html.Raw(Url.Action("GetMainMenuAreaAsync", "Widgets")))'>
+        <div class="loading--partial">
+            Ładowanie...
+        </div>
+    </div>
+
     @Html.Partial("~/Views/Shared/_StatusArea.cshtml")
 
     <div class="container">
         @RenderBody()
     </div>
-    
+
     @Html.Partial("~/Views/Shared/_FooterArea.cshtml")
 
     @Scripts.Render("~/Content/PanelTheme")
     @RenderSection("scripts", required: false)
+
+    <script>
+        $(document).ready(function (e) {
+            $('.partialContent').each(function (index, item) {
+                var widgetUrl = $(item).data('url');
+                if (widgetUrl) {
+                    $.ajax({
+                        url: widgetUrl,
+                        type: "GET",
+                        cache: false,
+                        success: function (data) {
+                            $(item).html(data);
+                        },
+                        error: function () {
+                            console.log('Błąd przetwarzania Widgetu. \n' +
+                                'URL: ' + url + '\n' +
+                                'PARAM:' + params);
+                        }
+                    });
+                } else {
+                    $(item).html('');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
