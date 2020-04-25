@@ -15,4 +15,9 @@ namespace UMS_Portal.ViewModels
         public string IconClass { get; set; }
         public bool WithoutLinking { get; set; }
     }
+
+    public class AddMenuItemViewModel
+    {
+
+    }
 }

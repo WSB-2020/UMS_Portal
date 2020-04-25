@@ -10,6 +10,10 @@ namespace UMS_Portal.Controllers
     {
         public ActionResult Index()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Dashboard");
+            }
             return View();
         }
 

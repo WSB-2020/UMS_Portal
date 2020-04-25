@@ -38,6 +38,7 @@ namespace UMS_Portal
                       "~/Content/PanelTheme/css/scrollbar/jquery.mCustomScrollbar.min.css",
                       "~/Content/PanelTheme/css/jvectormap/jquery-jvectormap-2.0.3.css",
                       "~/Content/PanelTheme/css/notika-custom-icon.css",
+                      "~/Content/PanelTheme/css/jquery.dataTables.min.css",
                       "~/Content/PanelTheme/css/wave/waves.min.css",
                       "~/Content/PanelTheme/css/main.css",
                       "~/Content/PanelTheme/style.css",
@@ -73,6 +74,8 @@ namespace UMS_Portal
                       "~/Content/PanelTheme/js/wave/wave-active.js",
                       "~/Content/PanelTheme/js/todo/jquery.todo.js",
                       "~/Content/PanelTheme/js/plugins.js",
+                      "~/Content/PanelTheme/js/data-table/jquery.dataTables.min.js",
+                      "~/Content/PanelTheme/js/data-table/data-table-act.js",
                       "~/Content/PanelTheme/js/chat/moment.min.js",
                       "~/Content/PanelTheme/js/chat/jquery.chat.js",
                       "~/Content/PanelTheme/js/main.js"

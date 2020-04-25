@@ -27,6 +27,11 @@
                             </li>
                         }
                     }
+                    <li>
+                        <a data-toggle="tab" href="#other">
+                            X Inne
+                        </a>
+                    </li>
                 </ul>
                 <div class="tab-content custom-menu-content">
                     @foreach (var item in Model.Where(m => m.ParentMenuId == null))
@@ -42,6 +47,14 @@
                             </ul>
                         </div>
                     }
+
+                    <div id="other" class="tab-pane in notika-tab-menu-bg animated flipInX">
+                        <ul class="notika-main-menu-dropdown">
+                            <li>@Html.ActionLink("O projekcie", "About", "Home")</li>
+                            <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("Zgłoś błąd", "Contact", "Home")</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

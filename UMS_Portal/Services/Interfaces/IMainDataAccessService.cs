@@ -11,6 +11,7 @@ namespace UMS_Portal.Services.Interfaces
 {
     public interface IMainDataAccessService
     {
+        Task<bool> AddMenuItem(NavigationMenuViewModel vm);
         Task<List<NavigationMenuViewModel>> GetMenuItemsAsync(IIdentity principal);
     }
 }

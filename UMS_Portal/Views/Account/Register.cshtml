@@ -1,41 +1,20 @@
 ﻿@model UMS_Portal.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Zarejestruj się";
+    ViewBag.Title = "Wybierz sposób rejestracji";
 }
-
-<h2>@ViewBag.Title.</h2>
-
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Utwórz nowe konto w systemie</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1 style="padding: 1em 0">Wybierz sposób rejestracji</h1>
+        <hr />
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
+    <div class="col-md-6 text-center">
+        <h2 style="height: 100px;">Posiadam kod autoryzacyjny.</h2>
+        <hr />
+        <a href="@Url.Action("RegisterWithCode", "Account")" class="btn btn-primary">Wybierz</a>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
+    <div class="col-md-6 text-center">
+        <h2 style="height: 100px;">Posiadam adres e-mail w zaufanej domenie (ums.pl).</h2>
+        <hr />
+        <a href="@Url.Action("RegisterTrustedDomain", "Account")" class="btn btn-primary">Wybierz</a>
     </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-success" value="Rejestruj!" />
-        </div>
-    </div>
-}
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+</div>

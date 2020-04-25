@@ -1,7 +1,19 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "UMS - strona główna";
 }
-
+    <style>
+        img.roundedAvatar__big--hover {
+            max-height: 200px;
+            border-radius: 50%;
+            box-shadow: -10px -10px 10px #444;
+        }
+            img.roundedAvatar__big--hover:hover {
+                transition: .1s ease-in all;
+                max-height: 210px;
+                box-shadow: 0 0 10px #444;
+                cursor: pointer;
+            }
+    </style>
     <div class="jumbotron" style="background: #00C292;">
         <div class="row">
             <div class="col-md-3">
@@ -11,7 +23,7 @@
                 <h1 style="color: #fff;">University Management System</h1>
             </div>
             <div class="col-md-12">
-                <p class="lead">System obsługi zapisów na płatne zajęcia dodatkowe prowadzone przez uczelnię</p>
+                <p class="lead" style="text-shadow: 0 0 12px #000; color: #fff">System obsługi zapisów na płatne zajęcia dodatkowe prowadzone przez uczelnię</p>
             </div>
             <div class="col-md-12">
                 <p><a href="@Url.Action("About", "Home")" class="btn btn-primary btn-lg">Dowiedz się więcej...</a></p>
@@ -26,27 +38,15 @@
             <hr />
         </div>
         <div class="col-md-4 text-center">
-            <img class="img-responsive" src="~/Images/logo_menu.png" />
+            <img class="roundedAvatar__big--hover" src="~/UserFiles/Avatars/krzysztofKrzepicki.png" />
             <h2>Krzysztof Krzepicki</h2>
-            <p class="text-left">
-                ...
-            </p>
-            <p><a class="btn btn-default" href="#">Więcej &raquo;</a></p>
         </div>
-        <div class="col-md-4">
-            <img class="img-responsive" src="~/Images/logo_menu.png" />
+        <div class="col-md-4 text-center">
+            <img class="roundedAvatar__big--hover" src="~/UserFiles/Avatars/sebastianPerz.png" />
             <h2>Sebastian Perz</h2>
-            <p class="text-left">
-                ...
-            </p>
-            <p><a class="btn btn-default" href="#">Więcej &raquo;</a></p>
         </div>
-        <div class="col-md-4">
-            <img class="img-responsive" src="~/Images/logo_menu.png" />
+        <div class="col-md-4 text-center">
+            <img class="roundedAvatar__big--hover" src="~/UserFiles/Avatars/mateuszKudelski.png" />
             <h2>Mateusz Kudelski</h2>
-            <p class="text-left">
-                ...
-            </p>
-            <p><a class="btn btn-default" href="#">Więcej &raquo;</a></p>
         </div>
     </div>

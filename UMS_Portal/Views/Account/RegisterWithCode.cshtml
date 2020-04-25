@@ -1,0 +1,61 @@
+﻿@model UMS_Portal.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Zarejestruj się";
+}
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Zarejestruj się za pomocą otrzymanego kodu.</h2>
+        <hr />
+    </div>
+    <div class="col-md-6">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <h4>Utwórz nowe konto w systemie</h4>
+            <hr />
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label text-danger" for="ConfirmPassword">Kod rejestracji</label>
+                <div class="col-md-10">
+                    <input class="form-control" name="code" type="text">
+                    *kod otrzymany od władz uczelni
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-success" value="Rejestruj!" />
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-6 text-center">
+        <h2 style="height: 100px;">Posiadam adres e-mail w zaufanej domenie (ums.pl).</h2>
+        <a href="@Url.Action("RegisterTrustedDomain", "Account")" class="btn btn-primary">Wybierz</a>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

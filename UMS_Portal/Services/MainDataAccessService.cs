@@ -8,6 +8,7 @@ using System.Security.Principal;
 using System.Threading.Tasks;
 using System.Web;
 using UMS_Portal.DAL;
+using UMS_Portal.Models;
 using UMS_Portal.Services.Interfaces;
 using UMS_Portal.ViewModels;
 
@@ -56,9 +57,47 @@ namespace UMS_Portal.Services
             return data;
         }
 
-        private string GetUserId(ClaimsPrincipal user)
+        public async Task<bool> AddMenuItem(NavigationMenuViewModel vm) //TODO: dodać uprawnienia roli!!!!
         {
-            return ((ClaimsIdentity)user.Identity).FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            try
+            {
+                NavigationMenu menuItem = new NavigationMenu
+                {
+                    Name = vm.Name,
+                    WithoutLinking = vm.WithoutLinking,
+                    ActionName = vm.ActionName,
+                    ControllerName = vm.ControllerName,
+                    IconClass = vm.IconClass
+                };
+                var parent = await _db.NavigationMenu.FindAsync(vm.ParentMenuId);
+                if (parent != null)
+                {
+                    menuItem.ParentMenuId = parent.Id;
+                }
+                _db.NavigationMenu.Add(menuItem);
+                await _db.SaveChangesAsync();
+
+                var adminRole = await _db.Roles.Where(r => r.Name == "Admin").FirstOrDefaultAsync();
+                if (adminRole != null)
+                {
+                    RoleMenuPermission rmp = new RoleMenuPermission
+                    {
+                        RoleId = adminRole.Id,
+                        NavigationMenuId = menuItem.Id
+                    };
+                    _db.RoleMenuPermission.Add(rmp);
+                    await _db.SaveChangesAsync();
+                }
+
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                return false;
+            }
         }
+
     }
 }

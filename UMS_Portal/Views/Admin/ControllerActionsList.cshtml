@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ControllerActionsViewModel>
+@using UMS_Portal.ViewModels;
+
+@{
+    ViewBag.Title = "ControllerActionsList";
+}
+
+<h2>Lista metod portalu</h2>
+<div class="table-responsive">
+    <table class="table table-striped" id="data-table-basic">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Controller)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Action)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Attributes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReturnType)
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Controller)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Action)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Attributes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReturnType)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

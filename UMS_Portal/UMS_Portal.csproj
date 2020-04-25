@@ -355,6 +355,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\WidgetsController.cs" />
@@ -379,9 +380,13 @@
     <Compile Include="Services\Interfaces\IMainDataAccessService.cs" />
     <Compile Include="Services\MainDataAccessService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ArchitectureViewModels.cs" />
     <Compile Include="ViewModels\NavigationMenuViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="android-chrome-192x192.png" />
+    <Content Include="android-chrome-512x512.png" />
+    <Content Include="apple-touch-icon.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -584,6 +589,8 @@
     <Content Include="Content\PanelTheme\view-email.html" />
     <Content Include="Content\PanelTheme\widgets.html" />
     <Content Include="Content\PanelTheme\wizard.html" />
+    <Content Include="favicon-16x16.png" />
+    <Content Include="favicon-32x32.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -616,6 +623,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="UserFiles\Avatars\krzysztofKrzepicki.png" />
+    <Content Include="UserFiles\Avatars\mateuszKudelski.png" />
+    <Content Include="UserFiles\Avatars\sebastianPerz.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -659,6 +669,12 @@
     <Content Include="Views\Shared\_SmallLoader.cshtml" />
     <Content Include="Views\Admin\UserMenusConfiguration.cshtml" />
     <Content Include="Views\Admin\ThemeConfiguration.cshtml" />
+    <Content Include="site.webmanifest" />
+    <Content Include="Views\Account\RegisterWithCode.cshtml" />
+    <Content Include="Views\Account\RegisterTrustedDomain.cshtml" />
+    <Content Include="Views\Admin\ControllerActionsList.cshtml" />
+    <Content Include="Views\Admin\AddMenuItem.cshtml" />
+    <Content Include="Views\Dashboard\Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

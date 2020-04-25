@@ -143,6 +143,20 @@ namespace UMS_Portal.Controllers
         }
 
         //
+        // GET: /Account/Register
+        [AllowAnonymous]
+        public ActionResult RegisterTrustedDomain()
+        {
+            return View();
+        }
+        //
+        // GET: /Account/Register
+        [AllowAnonymous]
+        public ActionResult RegisterWithCode()
+        {
+            return View();
+        }
+        //
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
