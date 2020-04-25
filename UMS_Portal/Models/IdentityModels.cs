@@ -1,4 +1,7 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using System.Diagnostics;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -16,6 +19,18 @@ namespace UMS_Portal.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public virtual ICollection<CourseModel> SupervisedCourses { get; set; }
+        public virtual ICollection<CourseModel> ParticipateCourses { get; set; }
+
+        public virtual ICollection<CourseActivity> SupervisedCoursesActivities { get; set; }
+        public virtual ICollection<CourseActivity> AttendanceCoursesActivities { get; set; }
+
+        public virtual ICollection<StudentCourseExamData> ExamDatas { get; set; }
+
+        [ForeignKey("Wallet")]
+        public string WalletId { get; set; }
+        public virtual WalletModel Wallet { get; set; }
     }
 
     

@@ -371,11 +371,18 @@
     <Compile Include="Migrations\202004242112544_RoleBasedMenuEdited.Designer.cs">
       <DependentUpon>202004242112544_RoleBasedMenuEdited.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004252221571_DatabaseModellingV1.cs" />
+    <Compile Include="Migrations\202004252221571_DatabaseModellingV1.Designer.cs">
+      <DependentUpon>202004252221571_DatabaseModellingV1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CourseModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LectureModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NavigationMenuModels.cs" />
+    <Compile Include="Models\WalletModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Interfaces\IMainDataAccessService.cs" />
     <Compile Include="Services\MainDataAccessService.cs" />
@@ -675,6 +682,9 @@
     <Content Include="Views\Admin\ControllerActionsList.cshtml" />
     <Content Include="Views\Admin\AddMenuItem.cshtml" />
     <Content Include="Views\Dashboard\Admin.cshtml" />
+    <Content Include="Views\Dashboard\Office.cshtml" />
+    <Content Include="Views\Dashboard\Lecturer.cshtml" />
+    <Content Include="Views\Dashboard\Student.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -699,6 +709,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004242112544_RoleBasedMenuEdited.resx">
       <DependentUpon>202004242112544_RoleBasedMenuEdited.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004252221571_DatabaseModellingV1.resx">
+      <DependentUpon>202004252221571_DatabaseModellingV1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
