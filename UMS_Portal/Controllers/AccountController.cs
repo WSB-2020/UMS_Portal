@@ -161,10 +161,14 @@ namespace UMS_Portal.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(RegisterViewModel model) 
         {
             if (ModelState.IsValid)
             {
+                if (model.Code != "trustedCode123")//TODO: Add code and domain veryfication
+                {
+                    return View(model);
+                }
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

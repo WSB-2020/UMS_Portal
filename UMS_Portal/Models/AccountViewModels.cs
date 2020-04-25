@@ -79,6 +79,8 @@ namespace UMS_Portal.Models
         [Display(Name = "Potwierdź hasło")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        public string Code { get; set; }
     }
 
     public class ResetPasswordViewModel

@@ -38,7 +38,7 @@
             <div class="form-group">
                 <label class="col-md-2 control-label text-danger" for="ConfirmPassword">Kod rejestracji</label>
                 <div class="col-md-10">
-                    <input class="form-control" name="code" type="text">
+                    @Html.TextBoxFor(m => m.Code, new { @class = "form-control" })
                     *kod otrzymany od władz uczelni
                 </div>
             </div>

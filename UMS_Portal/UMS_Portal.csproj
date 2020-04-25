@@ -619,6 +619,7 @@
     <Content Include="Content\PanelTheme\fonts\notika-icon.eot" />
     <Content Include="Content\PanelTheme\fonts\notika-icon.ttf" />
     <Content Include="Content\PanelTheme\fonts\notika-icon.woff" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

@@ -26,7 +26,7 @@ namespace UMS_Portal
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new StyleBundle("~/Content/PanelTheme/CSS").Include(
+            bundles.Add(new StyleBundle("~/Bundle/Content/PanelTheme/CSS").Include(
                       "~/Content/PanelTheme/css/bootstrap.min.css",
                       "~/Content/PanelTheme/css/font-awesome.min.css",
                       "~/Content/PanelTheme/css/owl.carousel.css",
@@ -46,7 +46,7 @@ namespace UMS_Portal
                       "~/Content/CustomPanelStyles.css"
                       ));
 
-            bundles.Add(new ScriptBundle("~/Content/PanelTheme").Include(
+            bundles.Add(new ScriptBundle("~/Bundle/Content/PanelTheme/SCRIPTS").Include(
                       "~/Content/PanelTheme/js/vendor/jquery-1.12.4.min.js",
                       "~/Content/PanelTheme/js/bootstrap.min.js",
                       "~/Content/PanelTheme/js/wow.min.js",
