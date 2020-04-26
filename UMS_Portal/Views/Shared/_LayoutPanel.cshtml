@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-    @Styles.Render("~/Bundle/Content/PanelTheme/CSS")
+    @Styles.Render("~/Content/PanelTheme/CSS_BUNDLE")
     @Scripts.Render("~/bundles/modernizr")
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
@@ -16,7 +16,10 @@
 <body>
     <!--[if lt IE 8]> <p class="browserupgrade">Używasz <strong>przestażałej</strong> przeglądarki. Proszę <a href="http://browsehappy.com/">uaktualnij przeglądarkę</a>, aby móc w pełni korzystać ze strony.</p> <![endif]-->
     @Html.Partial("~/Views/Shared/_HeaderTopArea.cshtml")
-    @Html.Partial("~/Views/Shared/_MobileMenuArea.cshtml")
+    @*@Html.Partial("~/Views/Shared/_MobileMenuArea.cshtml")*@
+    <div class="partialContent" data-initialize="meanmenu" data-url='@(Html.Raw(Url.Action("GetMobileMainMenuAreaAsync", "Widgets")))'>
+        @Html.Partial("~/Views/Shared/_SmallLoader.cshtml")
+    </div>
 
     @*@Html.Partial("~/Views/Shared/_MainMenuArea.cshtml")*@
     <div class="partialContent" data-url='@(Html.Raw(Url.Action("GetMainMenuAreaAsync", "Widgets")))'>
@@ -28,33 +31,41 @@
 
     @Html.Partial("~/Views/Shared/_FooterArea.cshtml")
 
-    @Scripts.Render("~/Bundle/Content/PanelTheme/SCRIPTS")
+    @Scripts.Render("~/Content/PanelTheme/SCRIPTS_BUNDLE")
     @RenderSection("scripts", required: false)
 
-    <script>
-        $(document).ready(function (e) {
-            $('.partialContent').each(function (index, item) {
-                var widgetUrl = $(item).data('url');
-                if (widgetUrl) {
-                    $.ajax({
-                        url: widgetUrl,
-                        type: "GET",
-                        cache: false,
-                        success: function (data) {
-                            $(item).html(data);
-                        },
-                        error: function () {
-                            console.log('Błąd przetwarzania Widgetu. \n' +
-                                'URL: ' + url + '\n' +
-                                'PARAM:' + params);
+<script>
+    $(document).ready(function (e) {
+        $('.partialContent').each(function (index, item) {
+            var widgetUrl = $(item).data('url');
+            var initialize = $(item).data('initialize');
+            if (widgetUrl) {
+                $.ajax({
+                    url: widgetUrl,
+                    type: "GET",
+                    cache: false,
+                    success: function (data) {
+                        $(item).html(data);
+                        if (initialize == "meanmenu") {
+                            jQuery('nav#roleMenu').meanmenu();
                         }
-                    });
-                } else {
-                    $(item).html('');
-                }
-            });
+                    },
+                    error: function () {
+                        console.log('Błąd przetwarzania Widgetu. \n' +
+                            'URL: ' + url + '\n' +
+                            'PARAM:' + params);
+                    }
+                });
+            } else {
+                $(item).html('');
+            }
         });
-    </script>
+    });
+
+    $(document).ajaxComplete(function () {
+        console.log("Ajax complete handler!!");
+    });
+</script>
 </body>
 
 </html>

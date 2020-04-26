@@ -398,6 +398,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CustomPanelScripts.js" />
     <Content Include="Content\CustomPanelStyles.css" />
     <Content Include="Content\PanelTheme\404.html" />
     <Content Include="Content\PanelTheme\accordion.html" />

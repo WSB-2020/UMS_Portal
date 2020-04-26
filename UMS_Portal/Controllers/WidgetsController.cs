@@ -34,5 +34,12 @@ namespace UMS_Portal.Controllers
             var data = await _dataS.GetMenuItemsAsync(User.Identity);
             return PartialView("~/Views/Shared/_MainMenuArea.cshtml", data);
         }
+
+        [HttpGet]
+        public async Task<ActionResult> GetMobileMainMenuAreaAsync()
+        {
+            var data = await _dataS.GetMenuItemsAsync(User.Identity);
+            return PartialView("~/Views/Shared/_MobileMenuArea.cshtml", data);
+        }
     }
 }
