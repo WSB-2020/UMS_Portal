@@ -4,4 +4,24 @@
 }
 
 <h2>Panel główny studenta</h2>
+<div class="row">
+    <div class="col-md-12">
+        @Html.Partial("~/Views/Widgets/_ScoreReport.cshtml")
+    </div>
+    <div class="col-md-8">
+        @Html.Partial("~/Views/Widgets/_OngoingTasks.cshtml")
+    </div>
+    <div class="col-md-4">
+        @Html.Partial("~/Views/Widgets/_RecentPosts.cshtml")
+    </div>
+    
+</div>
 
+<div class="row">
+    <div class="col-md-4">
+        @Html.Partial("~/Views/Widgets/_MyCoursesTable.cshtml")
+    </div>
+    <div class="col-md-8">
+        @Html.Partial("~/Views/Widgets/_AvailableCoursesList.cshtml")
+    </div>
+</div>

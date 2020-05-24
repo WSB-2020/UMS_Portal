@@ -1,15 +1,9 @@
 (function ($) {
  "use strict";
             var mapData = {
-                "US": 298,
-                "SA": 200,
-                "DE": 220,
-                "FR": 540,
-                "CN": 120,
-                "AU": 760,
-                "BR": 550,
-                "IN": 200,
-                "GB": 120,
+                "PL": 298,
+                "DE": 25,
+                "US": 5
             };
 
             $('#world-map').vectorMap({

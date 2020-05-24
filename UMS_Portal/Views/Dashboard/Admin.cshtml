@@ -4,4 +4,12 @@
 }
 
 <h2>Panel główny administratora</h2>
-@Html.Partial("~/Views/Shared/_StatusArea.cshtml")
+@Html.Partial("~/Views/Widgets/_StatusArea.cshtml")
+<div class="row">
+    <div class="col-md-4">
+        @Html.Partial("~/Views/Widgets/_EmailStatistics.cshtml")
+    </div>
+    <div class="col-md-8">
+        @Html.Partial("~/Views/Widgets/_RealtimeVisitors.cshtml")
+    </div>
+</div>

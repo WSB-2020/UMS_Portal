@@ -23,7 +23,7 @@ namespace UMS_Portal.Models
         [ForeignKey("NavigationMenu")]
         public Guid NavigationMenuId { get; set; }
 
-        public NavigationMenu NavigationMenu { get; set; }
+        public virtual NavigationMenu NavigationMenu { get; set; }
 
         public virtual IdentityRole ApplicationRole { get; set; }
     }

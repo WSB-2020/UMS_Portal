@@ -1,0 +1,54 @@
+﻿
+<div class="table-responsive realtime-wrap notika-shadow mg-b-15">
+    <h3>Dostępne kursy</h3>
+    <table class="data-table table  table-striped table-hover bg-success" id="data-table-basic">
+        <thead>
+            <tr>
+                <th>
+                    Lp.
+                </th>
+                <th>
+                    Nazwa kursu
+                </th>
+                <th>
+                    Data startu
+                </th>
+                <th>
+                    Ilość godzin
+                </th>
+                <th>
+                    Cena
+                </th>
+                <th>
+                    Akcja
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 1; i < 15; ++i)
+            {
+            <tr>
+                <td>
+                    @i
+                </td>
+                <td>
+                    Kurs numer @(i)
+                </td>
+                <td>
+                    @DateTime.Now.ToShortDateString()
+                </td>
+                <td>
+                    @(i*4)
+                </td>
+                <td>
+                    @(i*2 + 569) PLN
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-success">Zapisz się!</button>
+                </td>
+            </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

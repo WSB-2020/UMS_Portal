@@ -15,7 +15,18 @@ namespace UMS_Portal.Controllers
             {
                 return View("~/Views/Dashboard/Admin.cshtml");
             }
-
+            else if (User.IsInRole("Office"))
+            {
+                return View("~/Views/Dashboard/Office.cshtml");
+            }
+            else if (User.IsInRole("Lecturer"))
+            {
+                return View("~/Views/Dashboard/Lecturer.cshtml");
+            }
+            else if (User.IsInRole("Student"))
+            {
+                return View("~/Views/Dashboard/Student.cshtml");
+            }
             return View();
         }
     }

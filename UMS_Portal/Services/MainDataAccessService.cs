@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -77,12 +78,23 @@ namespace UMS_Portal.Services
                 _db.NavigationMenu.Add(menuItem);
                 await _db.SaveChangesAsync();
 
-                var adminRole = await _db.Roles.Where(r => r.Name == "Admin").FirstOrDefaultAsync();
-                if (adminRole != null)
+                IdentityRole userRole = null;
+
+                if (!string.IsNullOrEmpty(vm.RoleName))
+                {
+                     userRole = await _db.Roles.Where(r => r.Name == vm.RoleName).FirstOrDefaultAsync();
+                }
+                else
+                {
+                    userRole = await _db.Roles.Where(r => r.Name == "Admin").FirstOrDefaultAsync();
+                }
+
+
+                if (userRole != null)
                 {
                     RoleMenuPermission rmp = new RoleMenuPermission
                     {
-                        RoleId = adminRole.Id,
+                        RoleId = userRole.Id,
                         NavigationMenuId = menuItem.Id
                     };
                     _db.RoleMenuPermission.Add(rmp);
@@ -99,5 +111,9 @@ namespace UMS_Portal.Services
             }
         }
 
+        public async Task<IEnumerable<ApplicationUser>> GetUserList()
+        {
+            return await _db.Users.ToListAsync();
+        }
     }
 }

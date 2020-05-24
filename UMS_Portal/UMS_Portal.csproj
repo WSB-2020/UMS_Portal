@@ -358,6 +358,7 @@
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\WidgetsController.cs" />
     <Compile Include="DAL\ApplicationDbContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -603,9 +604,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_289ef010.png" />
+    <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_3ebaa3b4.png" />
+    <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_590efc48.png" />
+    <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_8bccb8e3.png" />
+    <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_8d50f426.png" />
+    <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_983b3669.png" />
+    <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_9ff71dc6.png" />
+    <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_aa60553.png" />
+    <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_b3ab463.png" />
+    <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_d4ac7c95.png" />
+    <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_e7504de0.png" />
+    <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_e7c94018.png" />
+    <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_eaac77ad.png" />
+    <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_f9e7fad6.jpg" />
     <Content Include="Images\krzysztof.png" />
     <Content Include="Images\logo_menu.png" />
     <Content Include="Images\logo_mini.png" />
+    <Content Include="Images\mateuszKudelski.png" />
+    <Content Include="Images\sebastianPerz.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\PanelTheme\fonts\fontawesome-webfont.eot" />
@@ -687,10 +704,24 @@
     <Content Include="Views\Dashboard\Office.cshtml" />
     <Content Include="Views\Dashboard\Lecturer.cshtml" />
     <Content Include="Views\Dashboard\Student.cshtml" />
+    <Content Include="Views\Widgets\_StatusArea.cshtml" />
+    <Content Include="Views\Widgets\_EmailStatistics.cshtml" />
+    <Content Include="Views\Widgets\_RealtimeVisitors.cshtml" />
+    <Content Include="Views\Admin\Users.cshtml" />
+    <Content Include="Views\Shared\_ModalLarge.cshtml" />
+    <Content Include="Views\Admin\ManualDataBackup.cshtml" />
+    <Content Include="Views\Widgets\_OngoingTasks.cshtml" />
+    <Content Include="Views\Widgets\_RecentPosts.cshtml" />
+    <Content Include="Views\Widgets\_ScoreReport.cshtml" />
+    <Content Include="Views\Widgets\_MyCoursesTable.cshtml" />
+    <Content Include="Views\Widgets\_AvailableCoursesList.cshtml" />
+    <Content Include="Views\Student\MyCourses.cshtml" />
+    <Content Include="Views\Student\AvailableCourses.cshtml" />
+    <Content Include="Views\Widgets\_ChatBox.cshtml" />
+    <Content Include="Views\Widgets\_MyCoursesTableLecturer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Widgets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

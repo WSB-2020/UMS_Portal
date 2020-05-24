@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using UMS_Portal.Models;
 using UMS_Portal.ViewModels;
 
 namespace UMS_Portal.Services.Interfaces
@@ -13,5 +14,6 @@ namespace UMS_Portal.Services.Interfaces
     {
         Task<bool> AddMenuItem(NavigationMenuViewModel vm);
         Task<List<NavigationMenuViewModel>> GetMenuItemsAsync(IIdentity principal);
+        Task<IEnumerable<ApplicationUser>> GetUserList();
     }
 }

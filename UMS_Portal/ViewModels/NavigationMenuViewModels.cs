@@ -14,6 +14,7 @@ namespace UMS_Portal.ViewModels
         public string ActionName { get; set; }
         public string IconClass { get; set; }
         public bool WithoutLinking { get; set; }
+        public string RoleName { get; set; }
     }
 
     public class AddMenuItemViewModel

@@ -1,0 +1,47 @@
+﻿
+<div class="table-responsive realtime-wrap notika-shadow mg-b-15">
+    <h3>Prowadzone kursy i szkolenia</h3>
+    <table class="data-table table table-striped" id="data-table-basic">
+        <thead>
+            <tr>
+                <th>
+                    Nazwa
+                </th>
+                <th>
+                    Ilość uczestników
+                </th>
+                <th>
+                    Online
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ 
+                Random rnd = new Random();
+            }
+            @for (int i = 0; i < 15; ++i)
+            {
+                <tr>
+                    <td>
+                        <a href="#">Kurs @(i)</a>
+                    </td>
+                    <td>
+                        @rnd.Next(0, 250)
+                    </td>
+                    <td>
+                        @if (i % 3 == 0)
+                        {
+                            <strong>Tak</strong>
+                        }
+                        else
+                        {
+                            <span>Nie</span>
+                        }
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

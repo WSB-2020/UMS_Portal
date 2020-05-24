@@ -1,7 +1,38 @@
 ﻿
 @{
-    ViewBag.Title = "Office";
+    ViewBag.Title = "Administracja";
 }
 
-<h2>Panel główny pracownika biurowego</h2>
+<h2>Panel główny administracji</h2>
+@Html.Partial("~/Views/Widgets/_StatusArea.cshtml")
 
+<div class="row">
+    <div class="col-md-12">
+        @Html.Partial("~/Views/Widgets/_ScoreReport.cshtml")
+    </div>
+    <div class="col-md-8">
+        @Html.Partial("~/Views/Widgets/_AvailableCoursesList.cshtml")
+    </div>
+
+    <div class="col-md-4">
+        @Html.Partial("~/Views/Widgets/_RecentPosts.cshtml")
+        @Html.Partial("~/Views/Widgets/_EmailStatistics.cshtml")
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        @Html.Partial("~/Views/Widgets/_OngoingTasks.cshtml")
+        @Html.Partial("~/Views/Widgets/_RealtimeVisitors.cshtml")
+    </div>
+    <div class="col-md-4">
+        @Html.Partial("~/Views/Widgets/_MyCoursesTable.cshtml")
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        @Html.Partial("~/Views/Widgets/_RealtimeVisitors.cshtml")
+    </div>
+</div>

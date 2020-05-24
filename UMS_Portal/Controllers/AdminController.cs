@@ -25,6 +25,17 @@ namespace UMS_Portal.Controllers
         public ActionResult Index()
         {
             return View();
+        }        
+
+        public ActionResult ManualDataBackup()
+        {
+            return View();
+        }
+
+        // GET: Admin
+        public async Task<ActionResult> Users()
+        {
+            return View(await _dataS.GetUserList());
         }
 
         public ActionResult ThemeConfiguration()

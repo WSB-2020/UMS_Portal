@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewBag.Title = "ManualDataBackup";
+}
+
+    <h2>Ręczny backup</h2>
+
+<div class="wizard-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="wizard-wrap-int">
+                    <div class="wizard-hd">
+                        <h2>Wizard</h2>
+                        <p>
+                            Wybierz elementy systemu, które chcesz zapisać w formie kopii bezpieczeństwa.
+                        </p>
+                    </div>
+                    <div id="rootwizard">
+                        <div class="navbar">
+                            <div class="navbar-inner">
+                                <div class="container-pro wizard-cts-st">
+                                    <ul>
+                                        <li><a href="#tab1" data-toggle="tab">Dane serwisu</a></li>
+                                        <li><a href="#tab2" data-toggle="tab">Wiadomości</a></li>
+                                        <li><a href="#tab3" data-toggle="tab">Kopia konfiguracji</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane wizard-ctn" id="tab1">
+                                <h3>
+                                    Wybierz miejsce zapisu danych na serwerze
+                                </h3>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="fm-checkbox">
+                                            <label><input name="a" type="radio" checked="" class="i-checks"> 
+                                            <i></i> {CURRENT_SERVER}\UMS_PORTAL\DataBackup\</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="fm-checkbox">
+                                            <label><input name="a" type="radio" value="option1" class="i-checks">
+                                            <i></i> {CURRENT_SERVER}\UMS_PORTAL\</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="fm-checkbox form-elet-mg">
+                                            <label><input name="a" type="radio" disabled class="i-checks"> 
+                                            <i></i>  {SERVER_2}\UMS\Backups\</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <button class="btn btn-success btn-block">Potwierdzam wykonanie kopii bezpieczeństwa!</button>
+                            </div>
+                            <div class="tab-pane wizard-ctn" id="tab2">
+                                <h3>
+                                    Wybierz miejsce zapisu wiadomości ze skrzynek serwisu
+                                </h3>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <input name="a" type="radio" checked="" class="i-checks">
+                                                <i></i> {CURRENT_SERVER}\UMS_PORTAL\DataBackup\
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <input name="a" type="radio" value="option1" class="i-checks">
+                                                <i></i> {CURRENT_SERVER}\UMS_PORTAL\
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="fm-checkbox form-elet-mg">
+                                            <label>
+                                                <input name="a" type="radio" disabled class="i-checks">
+                                                <i></i>  {SERVER_2}\UMS\Backups\
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <button class="btn btn-info btn-block">Potwierdzam wykonanie kopii bezpieczeństwa!</button>
+
+                            </div>
+                            <div class="tab-pane wizard-ctn" id="tab3">
+                                <h3>
+                                    Wybierz miejsce zapisu kopii konfiguracji aplikacji
+                                </h3>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <input name="a" type="radio" checked="" class="i-checks">
+                                                <i></i> {CURRENT_SERVER}\UMS_PORTAL\ConfigBackup\
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <input name="a" type="radio" value="option1" class="i-checks">
+                                                <i></i> {CURRENT_SERVER}\UMS_PORTAL\
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="fm-checkbox form-elet-mg">
+                                            <label>
+                                                <input name="a" type="radio" disabled class="i-checks">
+                                                <i></i>  {SERVER_2}\UMS\Backups\
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <button class="btn btn-primary btn-block">Potwierdzam wykonanie kopii bezpieczeństwa!</button>
+
+                            </div>
+                            <div class="wizard-action-pro">
+                                <ul class="wizard-nav-ac">
+                                    <li><a class="button-first a-prevent" href="#"><i class="notika-icon notika-more-button"></i></a></li>
+                                    <li><a class="button-previous a-prevent" href="#"><i class="notika-icon notika-back"></i></a></li>
+                                    <li><a class="button-next a-prevent" href="#"><i class="notika-icon notika-next-pro"></i></a></li>
+                                    <li><a class="button-last a-prevent" href="#"><i class="notika-icon notika-more-button"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

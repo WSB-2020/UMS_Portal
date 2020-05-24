@@ -21,5 +21,7 @@ namespace UMS_Portal.DAL
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<UMS_Portal.Models.WalletModel> WalletModels { get; set; }
     }
 }

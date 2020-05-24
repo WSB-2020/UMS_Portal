@@ -1,0 +1,45 @@
+﻿
+<div class="table-responsive realtime-wrap notika-shadow mg-b-15">
+    <h3>Moje kursy</h3>
+    <table class="data-table table table-striped" id="data-table-basic">
+        <thead>
+            <tr>
+                <th>
+                    Przedmiot
+                </th>
+                <th>
+                    Ocena
+                </th>
+                <th>
+                    Zatwierdzone
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < 15; ++i)
+            {
+                <tr>
+                    <td>
+                        <a href="#">Przedmiot @(i)</a>
+                    </td>
+                    <td>
+                        4
+                    </td>
+                    <td>
+                        @if (i % 3 == 0)
+                        {
+                            <strong>Tak</strong>
+                        }
+                        else
+                        {
+                            <span>Nie</span>
+                        }
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

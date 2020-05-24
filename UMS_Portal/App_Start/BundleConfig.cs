@@ -46,7 +46,7 @@ namespace UMS_Portal
                       "~/Content/CustomPanelStyles.css"
                       ));
 
-            bundles.Add(new ScriptBundle("~/Content/PanelTheme/SCRIPTS_BUNDLE").Include(
+              bundles.Add(new ScriptBundle("~/Content/PanelTheme/SCRIPTS_BUNDLE").Include(
                       "~/Content/PanelTheme/js/vendor/jquery-1.12.4.min.js",
                       "~/Content/PanelTheme/js/bootstrap.min.js",
                       "~/Content/PanelTheme/js/wow.min.js",
@@ -78,6 +78,8 @@ namespace UMS_Portal
                       "~/Content/PanelTheme/js/data-table/data-table-act.js",
                       "~/Content/PanelTheme/js/chat/moment.min.js",
                       "~/Content/PanelTheme/js/chat/jquery.chat.js",
+                      "~/Content/PanelTheme/js/wizard/jquery.bootstrap.wizard.min.js",
+                      "~/Content/PanelTheme/js/wizard/wizard-active.js",
                       "~/Content/PanelTheme/js/main.js"
                       //,
                       //"~/Content/PanelTheme/js/tawk-chat.js"
