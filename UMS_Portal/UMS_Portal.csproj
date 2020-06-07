@@ -604,6 +604,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\cogs.svg" />
     <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_289ef010.png" />
     <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_3ebaa3b4.png" />
     <Content Include="Images\docs\74f89750ff283b8f291f83c015b9c2f8_html_590efc48.png" />
@@ -719,6 +720,7 @@
     <Content Include="Views\Student\AvailableCourses.cshtml" />
     <Content Include="Views\Widgets\_ChatBox.cshtml" />
     <Content Include="Views\Widgets\_MyCoursesTableLecturer.cshtml" />
+    <Content Include="Views\Shared\_Maintenance.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

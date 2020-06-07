@@ -24,7 +24,7 @@ namespace UMS_Portal.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Dashboard");
         }        
 
         public ActionResult ManualDataBackup()
@@ -40,12 +40,12 @@ namespace UMS_Portal.Controllers
 
         public ActionResult ThemeConfiguration()
         {
-            return View();
+            return View("~/Views/Shared/_Maintenance.cshtml");
         }
 
         public ActionResult UserMenusConfiguration()
         {
-            return View();
+            return View("~/Views/Shared/_Maintenance.cshtml");
         }
 
         public ActionResult ControllerActionsList()
@@ -89,6 +89,21 @@ namespace UMS_Portal.Controllers
         public ActionResult AddMenuItem()
         {
             return View();
+        }
+        
+        public ActionResult UserAdd()
+        {
+            return View("~/Views/Shared/_Maintenance.cshtml");
+        }
+
+        public ActionResult UserAccept()
+        {
+            return View("~/Views/Shared/_Maintenance.cshtml");
+        }
+
+        public ActionResult DataBackup()
+        {
+            return View("~/Views/Shared/_Maintenance.cshtml");
         }
 
         [HttpPost]
